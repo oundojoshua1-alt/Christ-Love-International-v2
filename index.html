@@ -3,744 +3,376 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Christ Love International | Christ. Love. Mission.</title>
-
-  <meta
-    name="description"
-    content="Christ Love International is a Christ-centered mission committed to sharing the love of Jesus, transforming lives, discipling people, and serving communities in Kenya and beyond."
-  />
-
+  
+  <meta name="description" content="Christ Love International is a Christ-centered non-profit organization dedicated to impacting lives, mentoring youth, and transforming communities across Kenya and beyond through the Gospel and practical love." />
   <meta name="theme-color" content="#060A12" />
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            gold: {
-              100: "#FFF8E1",
-              300: "#FDE047",
-              400: "#FACC15",
-              500: "#EAB308",
-              600: "#D4AF37",
-              700: "#B48811",
-              800: "#856404"
-            },
-
-            navy: {
-              800: "#0F172A",
-              900: "#0B1120",
-              950: "#060A12"
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#F3E5AB',
+              goldDark: '#AA771C',
+              navyDark: '#030712',
+              navyCard: '#0B132B',
+              navyBlue: '#1E3A8A',
+              blueGlow: '#2563EB',
             }
           },
-
           fontFamily: {
-            sans: ["Plus Jakarta Sans", "sans-serif"],
-            serif: ["Cinzel", "serif"]
+            cinzel: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
           }
         }
       }
-    };
+    }
   </script>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      background:
-        radial-gradient(
-          circle at 50% -10%,
-          rgba(30, 58, 138, 0.25),
-          transparent 40%
-        ),
-        #060a12;
-
-      color: #ffffff;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      overflow-x: hidden;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030712;
+      color: #F8FAFC;
     }
-
-    .gold-gradient-text {
-      background: linear-gradient(
-        90deg,
-        #fff8e1,
-        #facc15,
-        #d4af37,
-        #fff8e1
-      );
-
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FFF5C0 0%, #D4AF37 50%, #AA771C 100%);
       -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      -webkit-text-fill-color: transparent;
     }
-
-    .gold-border-glow {
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      box-shadow:
-        0 0 25px rgba(212, 175, 55, 0.06),
-        inset 0 0 25px rgba(212, 175, 55, 0.025);
+    .border-gold-gradient {
+      border-image: linear-gradient(135deg, #D4AF37, #AA771C) 1;
     }
-
-    .gold-border-glow:hover {
-      border-color: rgba(212, 175, 55, 0.7);
-      box-shadow:
-        0 0 35px rgba(212, 175, 55, 0.12),
-        inset 0 0 25px rgba(212, 175, 55, 0.04);
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
     }
-
-    .glass-card {
-      background: rgba(15, 23, 42, 0.58);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .glass-card-gold {
-      background: linear-gradient(
-        145deg,
-        rgba(212, 175, 55, 0.10),
-        rgba(15, 23, 42, 0.55)
-      );
-
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-
-      border: 1px solid rgba(212, 175, 55, 0.25);
-    }
-
-    .glow-bg-primary {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: rgba(212, 175, 55, 0.07);
-      filter: blur(100px);
-      pointer-events: none;
-    }
-
-    .glow-bg-blue {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: rgba(30, 58, 138, 0.12);
-      filter: blur(120px);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      background-image:
-        linear-gradient(
-          rgba(255,255,255,0.025) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.025) 1px,
-          transparent 1px
-        );
-
-      background-size: 60px 60px;
-
-      mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent
-      );
-    }
-
-    .logo-glow {
-      filter:
-        drop-shadow(0 0 10px rgba(250, 204, 21, 0.25))
-        drop-shadow(0 0 30px rgba(30, 58, 138, 0.3));
-    }
-
-    .text-shadow {
-      text-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
-    }
-
-    .section-line {
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d4af37,
-        transparent
-      );
-    }
-
-    ::selection {
-      background: #d4af37;
-      color: #060a12;
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #060a12;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #856404;
-      border-radius: 999px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #d4af37;
-    }
-
-    .mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
-
-    .mobile-menu.open {
-      max-height: 600px;
-    }
-
-    .modal {
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.3s ease;
-    }
-
-    .modal.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-box {
-      transform: translateY(20px) scale(0.98);
-      transition: 0.3s ease;
-    }
-
-    .modal.active .modal-box {
-      transform: translateY(0) scale(1);
+    .blue-glow {
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
     }
   </style>
 </head>
+<body class="bg-[#030712] text-slate-100 min-h-screen overflow-y-auto">
 
-<body class="antialiased">
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#030712]/90 border-b border-amber-500/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Header -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="relative w-12 h-12 rounded-full overflow-hidden border border-amber-400/40 gold-glow flex items-center justify-center bg-slate-900">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="w-full h-full object-cover">
+            <circle cx="400" cy="400" r="380" fill="#0A1224"/>
+            <circle cx="400" cy="340" r="220" fill="#1E3A8A" stroke="#D4AF37" stroke-width="8"/>
+            <path d="M 400 580 C 330 550, 250 560, 180 620 C 240 600, 320 580, 400 610 C 480 580, 560 600, 620 620 C 550 560, 470 550, 400 580 Z" fill="#D4AF37"/>
+            <path d="M 400 560 C 350 530, 260 460, 270 360 C 280 270, 370 290, 400 370 C 430 290, 520 270, 530 360 C 540 460, 450 530, 400 560 Z" fill="#D4AF37"/>
+            <path d="M 388 230 L 412 230 L 412 560 L 388 560 Z" fill="#FFFFFF"/>
+            <path d="M 320 310 L 480 310 L 480 334 L 320 334 Z" fill="#FFFFFF"/>
+          </svg>
+        </div>
+        <div>
+          <span class="block font-cinzel text-lg font-bold tracking-wider text-slate-100 leading-tight group-hover:text-amber-400 transition">CHRIST LOVE</span>
+          <span class="block font-sans text-[10px] font-extrabold tracking-[0.25em] text-amber-400 uppercase">International</span>
+        </div>
+      </a>
 
-  <!-- ========================================================= -->
-  <!-- NAVIGATION -->
-  <!-- ========================================================= -->
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <a href="#home" class="hover:text-amber-400 transition">Home</a>
+        <a href="#about" class="hover:text-amber-400 transition">About</a>
+        <a href="#vision" class="hover:text-amber-400 transition">Vision & Mission</a>
+        <a href="#values" class="hover:text-amber-400 transition">Core Values</a>
+        <a href="#objectives" class="hover:text-amber-400 transition">Objectives</a>
+        <a href="#pillars" class="hover:text-amber-400 transition">Program Pillars</a>
+        <a href="#involved" class="hover:text-amber-400 transition">Get Involved</a>
+      </nav>
 
-  <header
-    class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-navy-950/75 backdrop-blur-xl"
-  >
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="h-20 flex items-center justify-between">
+      <!-- Action Button -->
+      <a href="#involved" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 hover:scale-105 transition duration-300">
+        <span>Partner With Us</span>
+        <i class="fa-solid fa-heart text-xs"></i>
+      </a>
 
-        <!-- BRAND -->
-        <a href="#home" class="flex items-center gap-3">
-
-          <!-- Logo -->
-          <div class="w-12 h-12 logo-glow">
-            <svg
-              viewBox="0 0 100 100"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Christ Love International logo"
-            >
-
-              <defs>
-
-                <radialGradient id="globeGradient">
-                  <stop offset="0%" stop-color="#1E3A8A"/>
-                  <stop offset="75%" stop-color="#0A192F"/>
-                  <stop offset="100%" stop-color="#050A13"/>
-                </radialGradient>
-
-                <linearGradient
-                  id="goldGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stop-color="#FFF8E1"/>
-                  <stop offset="30%" stop-color="#FACC15"/>
-                  <stop offset="65%" stop-color="#D4AF37"/>
-                  <stop offset="100%" stop-color="#856404"/>
-                </linearGradient>
-
-                <filter id="goldGlow">
-                  <feGaussianBlur
-                    stdDeviation="1.8"
-                    result="blur"
-                  />
-
-                  <feMerge>
-                    <feMergeNode in="blur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-
-              </defs>
-
-              <!-- Globe -->
-              <circle
-                cx="50"
-                cy="45"
-                r="31"
-                fill="url(#globeGradient)"
-                stroke="#D4AF37"
-                stroke-width="1.3"
-              />
-
-              <!-- Globe longitude -->
-              <ellipse
-                cx="50"
-                cy="45"
-                rx="13"
-                ry="31"
-                fill="none"
-                stroke="#1E40AF"
-                stroke-width="1"
-                opacity="0.75"
-              />
-
-              <!-- Globe latitude -->
-              <ellipse
-                cx="50"
-                cy="45"
-                rx="30"
-                ry="12"
-                fill="none"
-                stroke="#2563EB"
-                stroke-width="1"
-                opacity="0.65"
-              />
-
-              <!-- Stylized Africa -->
-              <path
-                d="
-                  M46 29
-                  C42 31 40 35 41 39
-                  C42 42 44 44 43 48
-                  C42 52 44 56 47 59
-                  C49 62 51 66 53 68
-                  C56 64 57 60 58 56
-                  C60 52 59 49 61 46
-                  C59 42 57 39 55 36
-                  C53 32 50 30 46 29Z
-                "
-                fill="#183B72"
-                opacity="0.9"
-              />
-
-              <!-- Open Bible -->
-              <path
-                d="
-                  M18 73
-                  Q34 67 50 76
-                  Q66 67 82 73
-                  L82 87
-                  Q66 81 50 90
-                  Q34 81 18 87Z
-                "
-                fill="#D4AF37"
-                opacity="0.95"
-              />
-
-              <path
-                d="
-                  M20 74
-                  Q35 69 50 77
-                  L50 88
-                  Q35 80 20 85Z
-                "
-                fill="#FFF8E1"
-                opacity="0.9"
-              />
-
-              <path
-                d="
-                  M80 74
-                  Q65 69 50 77
-                  L50 88
-                  Q65 80 80 85Z
-                "
-                fill="#FACC15"
-                opacity="0.75"
-              />
-
-              <!-- Cross -->
-              <g
-                filter="url(#goldGlow)"
-                fill="url(#goldGradient)"
-              >
-                <rect
-                  x="46"
-                  y="16"
-                  width="8"
-                  height="52"
-                  rx="2"
-                />
-
-                <rect
-                  x="36"
-                  y="28"
-                  width="28"
-                  height="8"
-                  rx="2"
-                />
-              </g>
-
-              <!-- Heart ribbon -->
-              <path
-                d="
-                  M50 72
-                  C46 66 24 53 25 39
-                  C26 30 36 26 43 31
-                  C47 34 49 38 50 41
-                  C51 38 53 34 57 31
-                  C64 26 74 30 75 39
-                  C76 53 54 66 50 72Z
-                "
-                fill="none"
-                stroke="url(#goldGradient)"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-
-            </svg>
-          </div>
-
-          <div class="leading-none">
-            <div class="font-serif text-sm sm:text-base tracking-[0.12em] font-bold">
-              CHRIST LOVE
-            </div>
-
-            <div class="text-[9px] sm:text-[10px] tracking-[0.35em] text-gold-500 mt-1">
-              INTERNATIONAL
-            </div>
-          </div>
-
-        </a>
-
-        <!-- DESKTOP NAV -->
-        <nav class="hidden lg:flex items-center gap-7 text-sm text-white/70">
-
-          <a href="#home" class="hover:text-gold-400 transition">
-            Home
-          </a>
-
-          <a href="#about" class="hover:text-gold-400 transition">
-            About
-          </a>
-
-          <a href="#vision" class="hover:text-gold-400 transition">
-            Vision
-          </a>
-
-          <a href="#values" class="hover:text-gold-400 transition">
-            Values
-          </a>
-
-          <a href="#objectives" class="hover:text-gold-400 transition">
-            Objectives
-          </a>
-
-          <a href="#pillars" class="hover:text-gold-400 transition">
-            Pillars
-          </a>
-
-          <a href="#involved" class="hover:text-gold-400 transition">
-            Get Involved
-          </a>
-
-        </nav>
-
-        <!-- DESKTOP CTA -->
-        <button
-          onclick="openModal()"
-          class="hidden lg:flex items-center gap-2 px-5 py-3 rounded-full bg-gold-600 hover:bg-gold-500 text-navy-950 font-bold text-sm transition"
-        >
-          Partner With Us
-          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-        </button>
-
-        <!-- MOBILE BUTTON -->
-        <button
-          id="menuBtn"
-          class="lg:hidden w-11 h-11 rounded-xl glass-card flex items-center justify-center"
-          aria-label="Open menu"
-        >
-          <i data-lucide="menu" class="w-5 h-5"></i>
-        </button>
-
-      </div>
-
-      <!-- MOBILE MENU -->
-      <div id="mobileMenu" class="mobile-menu lg:hidden">
-
-        <nav class="py-5 border-t border-white/5 flex flex-col">
-
-          <a href="#home" class="mobile-link py-3 text-white/80">
-            Home
-          </a>
-
-          <a href="#about" class="mobile-link py-3 text-white/80">
-            About
-          </a>
-
-          <a href="#vision" class="mobile-link py-3 text-white/80">
-            Vision & Mission
-          </a>
-
-          <a href="#values" class="mobile-link py-3 text-white/80">
-            Core Values
-          </a>
-
-          <a href="#objectives" class="mobile-link py-3 text-white/80">
-            Objectives
-          </a>
-
-          <a href="#pillars" class="mobile-link py-3 text-white/80">
-            Ministry Pillars
-          </a>
-
-          <a href="#involved" class="mobile-link py-3 text-white/80">
-            Get Involved
-          </a>
-
-          <button
-            onclick="openModal()"
-            class="mt-3 px-5 py-3 rounded-xl bg-gold-600 text-navy-950 font-bold"
-          >
-            Partner With Us
-          </button>
-
-        </nav>
-
-      </div>
     </div>
   </header>
 
 
-  <!-- ========================================================= -->
-  <!-- HERO -->
-  <!-- ========================================================= -->
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="relative py-24 md:py-32 overflow-hidden border-b border-slate-800/80">
+    <div class="absolute inset-0 bg-radial from-blue-900/20 via-slate-950 to-slate-950 pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Hero Left Text Column -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+          <i class="fa-solid fa-cross"></i>
+          <span>Christ. Love. Mission.</span>
+        </div>
 
-  <main id="home">
+        <h1 class="font-cinzel text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-slate-100">
+          LOVE THAT POINTS <br/>
+          <span class="text-gold-gradient">PEOPLE TO CHRIST.</span>
+        </h1>
 
-    <section class="relative min-h-screen flex items-center pt-28 overflow-hidden">
+        <p class="text-lg text-slate-300 leading-relaxed max-w-2xl">
+          Sharing Christ's Love. Transforming Lives. Raising a generation that lives in faith, compassion, and purpose across Kenya and to the ends of the earth.
+        </p>
 
-      <div class="hero-grid absolute inset-0 opacity-60"></div>
+        <!-- Scripture Quote Card -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border-l-4 border-amber-400 text-slate-300 text-sm italic">
+          "For from Him and through Him and for Him are all things. To Him be the glory forever! Amen."
+          <span class="block mt-1 font-semibold text-amber-400 not-italic">— Romans 11:36</span>
+        </div>
 
-      <div class="glow-bg-blue -top-40 -left-40"></div>
-      <div class="glow-bg-primary top-40 right-[-250px]"></div>
+        <!-- Buttons -->
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a href="#about" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold shadow-lg shadow-amber-500/20 hover:scale-105 transition">
+            Explore Our Mission
+          </a>
+          <a href="#involved" class="px-7 py-3.5 rounded-full bg-slate-900 border border-slate-700 hover:border-amber-400 text-slate-200 font-semibold transition">
+            Get Involved
+          </a>
+        </div>
+      </div>
 
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 w-full relative z-10">
-
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-          <!-- HERO TEXT -->
-          <div>
-
-            <div
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-gold text-xs font-semibold tracking-wide text-gold-300 mb-7"
-            >
-              <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
-              CHRIST • LOVE • MISSION
-              <span class="text-white/40">|</span>
-              Kenya & Beyond 🌍
-            </div>
-
-            <h1
-              class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-shadow"
-            >
-              Love that
-              <span class="gold-gradient-text">
-                points people
-              </span>
-              to Christ.
-            </h1>
-
-            <p class="mt-7 text-lg sm:text-xl text-white/65 max-w-2xl leading-relaxed">
-              Sharing Christ's Love. Transforming Lives.
-              Raising a generation that lives in faith, compassion and purpose.
-            </p>
-
-            <div class="mt-7 flex items-center gap-3">
-
-              <div class="section-line"></div>
-
-              <p class="font-serif italic text-gold-300">
-                “For from Him and through Him and for Him are all things.”
-              </p>
-
-            </div>
-
-            <p class="mt-2 text-xs uppercase tracking-[0.25em] text-white/35">
-              Romans 11:36
-            </p>
-
-            <div class="mt-9 flex flex-wrap gap-4">
-
-              <a
-                href="#vision"
-                class="px-6 py-3.5 rounded-full bg-gold-600 hover:bg-gold-500 text-navy-950 font-bold transition flex items-center gap-2"
-              >
-                Explore Our Mission
-                <i data-lucide="arrow-down" class="w-4 h-4"></i>
-              </a>
-
-              <a
-                href="#involved"
-                class="px-6 py-3.5 rounded-full glass-card gold-border-glow hover:bg-white/5 transition font-semibold flex items-center gap-2"
-              >
-                Get Involved
-                <i data-lucide="heart-handshake" class="w-4 h-4 text-gold-400"></i>
-              </a>
-
-            </div>
-
+      <!-- Hero Right Emblem Banner -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-slate-900/90 border-2 border-amber-400/40 gold-glow p-6 flex flex-col items-center justify-center text-center">
+          <div class="w-32 h-32 mb-4 text-amber-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="w-full h-full drop-shadow-[0_0_15px_rgba(212,175,55,0.5)]">
+              <circle cx="400" cy="400" r="380" fill="#0A1224"/>
+              <circle cx="400" cy="340" r="220" fill="#1E3A8A" stroke="#D4AF37" stroke-width="10"/>
+              <path d="M 400 580 C 330 550, 250 560, 180 620 C 240 600, 320 580, 400 610 C 480 580, 560 600, 620 620 C 550 560, 470 550, 400 580 Z" fill="#D4AF37"/>
+              <path d="M 400 560 C 350 530, 260 460, 270 360 C 280 270, 370 290, 400 370 C 430 290, 520 270, 530 360 C 540 460, 450 530, 400 560 Z" fill="#D4AF37"/>
+              <path d="M 388 230 L 412 230 L 412 560 L 388 560 Z" fill="#FFFFFF"/>
+              <path d="M 320 310 L 480 310 L 480 334 L 320 334 Z" fill="#FFFFFF"/>
+            </svg>
           </div>
+          <h2 class="font-cinzel text-xl font-bold text-slate-100 tracking-wider">CHRIST LOVE</h2>
+          <p class="text-xs font-extrabold text-amber-400 tracking-[0.3em] uppercase mt-1">INTERNATIONAL</p>
+          <p class="text-xs text-slate-400 italic mt-2">Christ. Love. Mission.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
-          <!-- HERO LOGO -->
-          <div class="flex justify-center lg:justify-end">
+  <!-- ================= ABOUT US SECTION ================= -->
+  <section id="about" class="py-20 bg-slate-950/60 border-b border-slate-800/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-widest">
+        Who We Are
+      </div>
 
-            <div class="relative">
+      <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100">
+        About <span class="text-gold-gradient">Christ Love International</span>
+      </h2>
 
-              <div class="absolute inset-0 bg-blue-700/20 blur-[100px] rounded-full"></div>
+      <p class="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+        We are a Christ-centered non-profit organization committed to impacting lives, especially the young generation, through the message of the Gospel and practical acts of Love and service. Founded on Biblical truth, we seek to fulfill the Great Commission by nurturing faith, offering hope, and restoring dignity to individuals and communities.
+      </p>
 
-              <div
-                class="relative w-[290px] sm:w-[390px] lg:w-[460px] aspect-square rounded-full flex items-center justify-center"
-              >
+      <div class="grid sm:grid-cols-2 gap-6 pt-6 text-left">
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4">
+            <i class="fa-solid fa-book-bible text-xl"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-100 mb-2">1 Corinthians 13:13</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            "And now these three remain: faith, hope and love. But the greatest of these is love."
+          </p>
+        </div>
 
-                <svg
-                  viewBox="0 0 500 500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-full h-full logo-glow"
-                >
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4">
+            <i class="fa-solid fa-heart-pulse text-xl"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-100 mb-2">John 10:10</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            "I came that they may have life and have it abundantly."
+          </p>
+        </div>
+      </div>
 
-                  <defs>
+    </div>
+  </section>
 
-                    <radialGradient id="heroGlobe">
-                      <stop offset="0%" stop-color="#1E40AF"/>
-                      <stop offset="65%" stop-color="#0A192F"/>
-                      <stop offset="100%" stop-color="#050A13"/>
-                    </radialGradient>
 
-                    <linearGradient
-                      id="heroGold"
-                      x1="0"
-                      y1="0"
-                      x2="1"
-                      y2="1"
-                    >
-                      <stop offset="0%" stop-color="#FFF8E1"/>
-                      <stop offset="25%" stop-color="#FACC15"/>
-                      <stop offset="55%" stop-color="#D4AF37"/>
-                      <stop offset="100%" stop-color="#856404"/>
-                    </linearGradient>
+  <!-- ================= VISION & MISSION SECTION ================= -->
+  <section id="vision" class="py-20 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Vision Card -->
+        <div class="p-8 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-amber-500/30 gold-glow space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3 class="font-cinzel text-2xl font-bold text-slate-100">Our Vision</h3>
+          <p class="text-slate-300 leading-relaxed">
+            To see a transformed generation living purposefully in Christ, spreading His love, and positively impacting communities across Kenya and beyond.
+          </p>
+        </div>
 
-                    <filter id="heroGlow">
-                      <feGaussianBlur
-                        stdDeviation="5"
-                        result="blur"
-                      />
+        <!-- Mission Card -->
+        <div class="p-8 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border border-blue-500/30 blue-glow space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-2xl">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="font-cinzel text-2xl font-bold text-slate-100">Our Mission</h3>
+          <p class="text-slate-300 leading-relaxed">
+            To share the Gospel of Jesus Christ, mentor youth, empower communities, and demonstrate God’s love through holistic ministry—touching spiritual, emotional, and physical needs.
+          </p>
+        </div>
 
-                      <feMerge>
-                        <feMergeNode in="blur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
+      </div>
+    </div>
+  </section>
 
-                  </defs>
 
-                  <!-- Outer aura -->
-                  <circle
-                    cx="250"
-                    cy="250"
-                    r="220"
-                    fill="none"
-                    stroke="#D4AF37"
-                    stroke-width="2"
-                    opacity="0.35"
-                  />
+  <!-- ================= CORE VALUES SECTION ================= -->
+  <section id="values" class="py-20 bg-slate-950/60 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-widest">
+          Foundational Pillars
+        </div>
+        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100">
+          Our 6 Core <span class="text-gold-gradient">Values</span>
+        </h2>
+      </div>
 
-                  <circle
-                    cx="250"
-                    cy="250"
-                    r="210"
-                    fill="url(#heroGlobe)"
-                    stroke="#D4AF37"
-                    stroke-width="4"
-                  />
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition">
+          <i class="fa-solid fa-cross text-amber-400 text-2xl mb-4"></i>
+          <h3 class="font-bold text-slate-100 text-lg mb-2">1. Christ-Centeredness</h3>
+          <p class="text-slate-400 text-sm">Jesus Christ is the center and foundation of everything we do.</p>
+        </div>
 
-                  <!-- Globe grid -->
-                  <ellipse
-                    cx="250"
-                    cy="250"
-                    rx="95"
-                    ry="210"
-                    fill="none"
-                    stroke="#2563EB"
-                    stroke-width="3"
-                    opacity="0.5"
-                  />
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition">
+          <i class="fa-solid fa-heart text-amber-400 text-2xl mb-4"></i>
+          <h3 class="font-bold text-slate-100 text-lg mb-2">2. Unconditional Love</h3>
+          <p class="text-slate-400 text-sm">Serving all people with kindness, empathy, and respect without discrimination.</p>
+        </div>
 
-                  <ellipse
-                    cx="250"
-                    cy="250"
-                    rx="205"
-                    ry="82"
-                    fill="none"
-                    stroke="#2563EB"
-                    stroke-width="3"
-                    opacity="0.45"
-                  />
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition">
+          <i class="fa-solid fa-shield-halved text-amber-400 text-2xl mb-4"></i>
+          <h3 class="font-bold text-slate-100 text-lg mb-2">3. Integrity & Transparency</h3>
+          <p class="text-slate-400 text-sm">Upholding honesty, accountability, and ethical standards in all operations.</p>
+        </div>
 
-                  <ellipse
-                    cx="250"
-                    cy="250"
-                    rx="205"
-                    ry="135"
-                    fill="none"
-                    stroke="#1D4ED8"
-                    stroke-width="2"
-                    opacity="0.35"
-                  />
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition">
+          <i class="fa-solid fa-hands-holding-child text-amber-400 text-2xl mb-4"></i>
+          <h3 class="font-bold text-slate-100 text-lg mb-2">4. Servant Leadership</h3>
+          <p class="text-slate-400 text-sm">Leading by serving others, following the example of Jesus Christ.</p>
+        </div>
 
-                  <!-- Africa -->
-                  <path
-                    d="
-                      M235 145
-                      C210 155 194 176 196 199
-                      C198 218 214 229 211 248
-                      C207 271 218 293 232 310
-                      C246 327 255 354 268 373
-                      C289 350 299 322 304 295
-                      C310 268 300 250 309 228
-                      C300 205 287 188 276 169
-                      C266 151 252 143 235 145Z
-                    "
-                    fill="#183B72"
-                    s
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition">
+          <i class="fa-solid fa-users text-amber-400 text-2xl mb-4"></i>
+          <h3 class="font-bold text-slate-100 text-lg mb-2">5. Community Empowerment</h3>
+          <p class="text-slate-400 text-sm">Building capacity and creating sustainable change for future generations.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition">
+          <i class="fa-solid fa-star text-amber-400 text-2xl mb-4"></i>
+          <h3 class="font-bold text-slate-100 text-lg mb-2">6. Excellence</h3>
+          <p class="text-slate-400 text-sm">Striving for the highest quality in ministry, service, and organizational work.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= OBJECTIVES SECTION ================= -->
+  <section id="objectives" class="py-20 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-widest">
+          Strategic Goals
+        </div>
+        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-slate-100">
+          Our 8 Key <span class="text-gold-gradient">Objectives</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">01</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Gospel Proclamation</h3>
+          <p class="text-slate-400 text-xs">Spread the Gospel through missions, crusades, and digital evangelism.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">02</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Youth Mentorship</h3>
+          <p class="text-slate-400 text-xs">Guide young people through life skills, career mentorship, and spiritual growth.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">03</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Discipleship Programs</h3>
+          <p class="text-slate-400 text-xs">Establish Bible study groups, prayer altars, and leadership training hubs.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">04</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Charity Outreach</h3>
+          <p class="text-slate-400 text-xs">Provide food, clothes, and essential supplies to needy families and orphanages.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">05</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Educational Support</h3>
+          <p class="text-slate-400 text-xs">Offer scholarships, school materials, and literacy programs for bright needy students.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">06</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Mental Health & Guidance</h3>
+          <p class="text-slate-400 text-xs">Provide professional Christian counseling and drug awareness sessions.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">07</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Talent Development</h3>
+          <p class="text-slate-400 text-xs">Empower youth through music, creative arts, media, and sports ministries.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <span class="text-3xl font-cinzel font-extrabold text-amber-400">08</span>
+          <h3 class="font-bold text-slate-100 mt-2 mb-1">Kingdom Partnerships</h3>
+          <p class="text-slate-400 text-xs">Collaborate with local churches, schools, and global missions networks.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= PROGRAM PILLARS SECTION ================= -->
+  <section id="pillars" class="py-20 bg-slate-950/60 border-b border-slate-800/80">
+    <div class="m
