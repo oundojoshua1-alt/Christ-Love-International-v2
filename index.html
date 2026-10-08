@@ -9,6 +9,7 @@
     <meta name="description" content="Christ Love International is a Christ-centered mission sharing the Gospel, making disciples, mentoring lives, empowering communities and demonstrating the love of Christ through practical service.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +24,7 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #f8f8f6;
             color: #172033;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         a {
@@ -31,14 +32,15 @@
             color: inherit;
         }
 
-        img,
-        svg {
-            max-width: 100%;
+        .container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
         }
 
         :root {
             --navy: #071426;
-            --navy-dark: #050d19;
+            --dark-navy: #050d19;
             --gold: #d4af37;
             --gold-light: #e5c65a;
             --white: #ffffff;
@@ -48,65 +50,77 @@
             --border: #e5e7eb;
         }
 
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
+            background: var(--navy);
+            color: var(--white);
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(7, 20, 38, 0.97);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .nav {
-            max-width: 1180px;
+            width: 92%;
+            max-width: 1250px;
             margin: auto;
-            min-height: 76px;
-            padding: 10px 24px;
+            min-height: 82px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 25px;
+            gap: 30px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 11px;
+            gap: 12px;
             flex-shrink: 0;
         }
 
         .logo {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
+            width: 55px;
+            height: 55px;
         }
 
-        .brand-text strong {
+        .logo svg {
+            width: 100%;
+            height: 100%;
             display: block;
-            color: var(--white);
-            font-size: 17px;
-            letter-spacing: 1.5px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
             line-height: 1.1;
         }
 
+        .brand-text strong {
+            font-size: 15px;
+            letter-spacing: 1.5px;
+        }
+
         .brand-text span {
-            display: block;
-            color: var(--gold);
             font-size: 9px;
-            font-weight: bold;
             letter-spacing: 3px;
-            margin-top: 3px;
+            color: var(--gold);
+            margin-top: 4px;
         }
 
         nav {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 22px;
-            font-size: 13px;
-            color: #e5e7eb;
         }
 
         nav a {
-            transition: 0.2s ease;
+            font-size: 13px;
+            color: #dfe5ed;
+            transition: 0.3s ease;
         }
 
         nav a:hover {
@@ -114,12 +128,13 @@
         }
 
         .nav-button {
-            padding: 9px 16px;
             border: 1px solid var(--gold);
             color: var(--gold);
-            font-weight: bold;
-            font-size: 12px;
-            transition: 0.2s ease;
+            padding: 10px 17px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s ease;
             white-space: nowrap;
         }
 
@@ -128,11 +143,21 @@
             color: var(--navy);
         }
 
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            background: var(--navy);
+            min-height: 82vh;
+            background:
+                linear-gradient(rgba(5, 13, 25, 0.88), rgba(5, 13, 25, 0.94)),
+                radial-gradient(circle at center, #173c72 0%, #071426 55%, #050d19 100%);
             color: var(--white);
-            padding: 100px 24px 105px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 90px 20px;
             position: relative;
             overflow: hidden;
         }
@@ -142,33 +167,53 @@
             position: absolute;
             width: 500px;
             height: 500px;
+            border: 1px solid rgba(212, 175, 55, 0.12);
             border-radius: 50%;
-            background: rgba(212, 175, 55, 0.035);
             top: -250px;
-            right: -170px;
+            right: -180px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border: 1px solid rgba(212, 175, 55, 0.08);
+            border-radius: 50%;
+            bottom: -250px;
+            left: -150px;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
             max-width: 850px;
-            margin: auto;
+            position: relative;
+            z-index: 2;
         }
 
         .eyebrow {
             color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 3px;
             font-size: 12px;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
             margin-bottom: 18px;
         }
 
+        .hero .eyebrow {
+            display: inline-block;
+            padding: 9px 17px;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 30px;
+            background: rgba(212, 175, 55, 0.08);
+            margin-bottom: 25px;
+        }
+
         .hero h1 {
-            font-size: clamp(38px, 6vw, 68px);
-            line-height: 1.08;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            letter-spacing: 2px;
+            font-weight: 800;
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
@@ -176,82 +221,86 @@
         }
 
         .hero p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #d5dae2;
+            max-width: 760px;
+            margin: 0 auto;
+            color: #d7dee8;
             font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero p strong {
+            color: var(--gold-light);
         }
 
         .hero-buttons {
+            margin-top: 35px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 12px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 22px;
-            font-weight: bold;
+            padding: 13px 25px;
+            border-radius: 4px;
             font-size: 14px;
-            border: 1px solid var(--gold);
-            transition: 0.2s ease;
+            font-weight: 700;
+            transition: 0.3s ease;
         }
 
         .btn-primary {
             background: var(--gold);
             color: var(--navy);
+            border: 1px solid var(--gold);
         }
 
         .btn-primary:hover {
             background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
+            border: 1px solid #6b7280;
             color: var(--white);
+            background: transparent;
         }
 
         .btn-outline:hover {
-            background: var(--gold);
-            color: var(--navy);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
         }
 
-        section {
-            scroll-margin-top: 85px;
-        }
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         .section {
-            padding: 78px 24px;
-        }
-
-        .section-light {
-            background: var(--cream);
+            padding: 90px 0;
         }
 
         .section-white {
             background: var(--white);
         }
 
-        .container {
-            max-width: 1120px;
-            margin: auto;
+        .section-light {
+            background: var(--cream);
         }
 
         .section-heading {
-            max-width: 760px;
-            margin: 0 auto 45px;
             text-align: center;
-        }
-
-        .section-heading .eyebrow {
-            margin-bottom: 10px;
+            max-width: 750px;
+            margin: 0 auto 55px;
         }
 
         .section-heading h2 {
-            font-size: clamp(28px, 4vw, 40px);
+            font-size: clamp(30px, 4vw, 45px);
+            color: var(--navy);
             line-height: 1.2;
-            margin-bottom: 14px;
-            color: var(--text);
+            margin-bottom: 15px;
         }
 
         .section-heading h2 span {
@@ -260,21 +309,24 @@
 
         .section-heading p {
             color: var(--muted);
-            max-width: 680px;
-            margin: auto;
+            font-size: 16px;
         }
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1.35fr 0.65fr;
-            gap: 45px;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 27px;
+            font-size: 30px;
             color: var(--navy);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .about-text p {
@@ -282,109 +334,94 @@
             margin-bottom: 15px;
         }
 
-        .verse-box {
-            margin-top: 25px;
-            padding: 20px 22px;
+        .about-highlight {
             border-left: 4px solid var(--gold);
-            background: var(--white);
-        }
-
-        .verse-box p {
-            font-style: italic;
-            color: var(--text);
-            margin-bottom: 5px;
-        }
-
-        .verse-box strong {
-            color: var(--gold);
-            font-size: 13px;
+            padding: 20px 25px;
+            background: #fafafa;
+            margin-top: 25px;
+            color: var(--navy);
+            font-weight: 600;
         }
 
         .about-card {
             background: var(--navy);
             color: var(--white);
-            padding: 30px;
-            border: 1px solid rgba(212, 175, 55, 0.35);
+            padding: 45px;
+            border-radius: 6px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
         }
 
         .about-card h3 {
             color: var(--gold);
-            margin-bottom: 12px;
+            font-size: 24px;
+            margin-bottom: 18px;
         }
 
         .about-card p {
-            color: #d5dae2;
-            font-size: 14px;
+            color: #d7dee8;
         }
 
-        .two-column {
+        /* =========================
+           VISION
+        ========================= */
+
+        .vision-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .simple-card {
+        .vision-card {
+            padding: 40px;
             background: var(--white);
             border: 1px solid var(--border);
-            padding: 30px;
+            border-top: 4px solid var(--gold);
         }
 
-        .simple-card.dark {
-            background: var(--navy);
-            border-color: rgba(212, 175, 55, 0.3);
-            color: var(--white);
-        }
-
-        .card-label {
-            color: var(--gold);
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .simple-card h3 {
+        .vision-card h3 {
+            color: var(--navy);
             font-size: 25px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
-        .simple-card p {
+        .vision-card p {
             color: var(--muted);
         }
 
-        .simple-card.dark p {
-            color: #d5dae2;
-        }
+        /* =========================
+           VALUE CARDS
+        ========================= */
 
         .cards-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .value-card {
             background: var(--white);
-            padding: 25px;
+            padding: 32px;
             border: 1px solid var(--border);
-            transition: 0.2s ease;
+            transition: 0.3s ease;
         }
 
         .value-card:hover {
+            transform: translateY(-5px);
             border-color: var(--gold);
         }
 
-        .number {
+        .value-card .number {
             color: var(--gold);
-            font-weight: bold;
             font-size: 13px;
-            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
         }
 
         .value-card h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
             color: var(--navy);
+            margin-bottom: 12px;
+            font-size: 20px;
         }
 
         .value-card p {
@@ -392,81 +429,92 @@
             font-size: 14px;
         }
 
+        /* =========================
+           OBJECTIVES
+        ========================= */
+
         .objectives {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            gap: 20px;
         }
 
         .objective {
-            background: var(--white);
+            padding: 28px;
             border: 1px solid var(--border);
-            padding: 23px;
+            background: var(--cream);
         }
 
         .objective-number {
             color: var(--gold);
-            font-size: 25px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 12px;
         }
 
         .objective h3 {
             color: var(--navy);
-            font-size: 16px;
-            margin-bottom: 7px;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .objective p {
             color: var(--muted);
-            font-size: 13px;
+            font-size: 14px;
         }
+
+        /* =========================
+           PROGRAM PILLARS
+        ========================= */
 
         .pillar-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 22px;
         }
 
         .pillar {
             background: var(--navy);
             color: var(--white);
-            padding: 28px 22px;
-            border-top: 3px solid var(--gold);
+            padding: 35px 28px;
+            border-bottom: 3px solid var(--gold);
         }
 
         .pillar h3 {
             color: var(--gold);
-            margin-bottom: 10px;
-            font-size: 18px;
+            margin-bottom: 15px;
+            font-size: 20px;
         }
 
         .pillar p {
-            color: #cbd1da;
+            color: #d7dee8;
             font-size: 14px;
         }
+
+        /* =========================
+           MINISTRIES
+        ========================= */
 
         .ministry-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .ministry {
-            background: var(--white);
+            padding: 35px;
             border: 1px solid var(--border);
-            padding: 25px;
+            background: var(--white);
         }
 
         .ministry-icon {
-            color: var(--gold);
-            font-size: 24px;
-            margin-bottom: 13px;
+            font-size: 27px;
+            margin-bottom: 18px;
         }
 
         .ministry h3 {
             color: var(--navy);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .ministry p {
@@ -474,95 +522,106 @@
             font-size: 14px;
         }
 
+        /* =========================
+           SCRIPTURE
+        ========================= */
+
         .scripture {
             background: var(--navy);
             color: var(--white);
-            padding: 85px 24px;
             text-align: center;
+            padding: 95px 20px;
         }
 
         .scripture blockquote {
-            max-width: 800px;
-            margin: auto;
-            font-size: clamp(22px, 3vw, 31px);
-            line-height: 1.5;
-            font-style: italic;
+            max-width: 850px;
+            margin: 25px auto;
+            font-size: clamp(25px, 4vw, 38px);
+            line-height: 1.45;
+            font-weight: 500;
         }
 
         .scripture cite {
-            display: block;
-            margin-top: 20px;
             color: var(--gold);
             font-style: normal;
-            font-weight: bold;
-            font-size: 14px;
+            font-weight: 700;
             letter-spacing: 1px;
         }
 
+        /* =========================
+           ACTION
+        ========================= */
+
         .action-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            max-width: 850px;
-            margin: auto;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
         .action-item {
-            padding: 20px;
             background: var(--white);
-            border-left: 3px solid var(--gold);
-            border-bottom: 1px solid var(--border);
+            border: 1px solid var(--border);
+            padding: 30px;
+            color: var(--navy);
         }
 
         .action-item strong {
-            color: var(--navy);
+            font-size: 16px;
         }
 
+        /* =========================
+           IMPACT
+        ========================= */
+
         .impact {
-            background: var(--gold);
-            color: var(--navy);
+            background:
+                linear-gradient(rgba(7, 20, 38, 0.95), rgba(7, 20, 38, 0.95)),
+                radial-gradient(circle at center, #173c72, #071426);
+            color: var(--white);
             text-align: center;
-            padding: 75px 24px;
+            padding: 100px 20px;
         }
 
         .impact h2 {
-            font-size: clamp(29px, 4vw, 43px);
-            margin-bottom: 12px;
+            font-size: clamp(32px, 5vw, 50px);
+            margin-bottom: 20px;
         }
 
         .impact p {
-            max-width: 720px;
-            margin: auto;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: #d7dee8;
             font-size: 17px;
         }
 
         .impact strong {
-            display: block;
-            margin-top: 20px;
-            font-size: 18px;
+            color: var(--gold);
         }
+
+        /* =========================
+           INVOLVEMENT
+        ========================= */
 
         .involvement-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .involvement {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 30px;
             text-align: center;
+            padding: 35px;
+            border: 1px solid var(--border);
+        }
+
+        .involvement-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
         .involvement h3 {
             color: var(--navy);
-            margin: 12px 0 8px;
-        }
-
-        .involvement-icon {
-            font-size: 26px;
-            color: var(--gold);
+            margin-bottom: 10px;
         }
 
         .involvement p {
@@ -570,72 +629,80 @@
             font-size: 14px;
         }
 
+        /* =========================
+           CONTACT
+        ========================= */
+
         .contact {
-            background: var(--white);
+            background: var(--cream);
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 45px;
-            align-items: start;
+            gap: 60px;
+            align-items: center;
         }
 
         .contact-info h3 {
+            font-size: 32px;
             color: var(--navy);
-            font-size: 27px;
-            margin-bottom: 13px;
-        }
-
-        .contact-info p {
-            color: var(--muted);
-            margin-bottom: 22px;
-        }
-
-        .contact-item {
             margin-bottom: 15px;
         }
 
+        .contact-info > p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
         .contact-item strong {
-            display: block;
             color: var(--navy);
-            font-size: 14px;
         }
 
         .contact-item span {
             color: var(--muted);
-            font-size: 14px;
         }
 
         .contact-box {
             background: var(--navy);
             color: var(--white);
-            padding: 30px;
+            padding: 45px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .contact-box h3 {
             color: var(--gold);
-            margin-bottom: 10px;
+            font-size: 26px;
+            margin-bottom: 15px;
         }
 
         .contact-box p {
-            color: #d5dae2;
-            font-size: 14px;
-            margin-bottom: 20px;
+            color: #d7dee8;
+            margin-bottom: 25px;
         }
 
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
-            background: var(--navy-dark);
-            color: #aeb6c2;
-            padding: 35px 24px;
+            background: var(--dark-navy);
+            color: #aeb8c7;
             text-align: center;
+            padding: 55px 20px;
         }
 
         .footer-brand {
             color: var(--white);
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
         .footer-brand span {
@@ -643,61 +710,89 @@
         }
 
         footer p {
-            font-size: 12px;
-            margin-top: 8px;
+            font-size: 13px;
+            margin: 8px 0;
         }
 
         .footer-tagline {
             color: var(--gold);
-            font-style: italic;
-            margin-top: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        @media (max-width: 1000px) {
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1050px) {
+
             nav {
-                display: none;
+                gap: 13px;
             }
 
-            .nav-button {
-                display: none;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
+            nav a {
+                font-size: 12px;
             }
 
             .objectives,
             .pillar-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+        }
 
-            .cards-3 {
+        @media (max-width: 850px) {
+
+            .nav {
+                min-height: 75px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .about-grid,
+            .vision-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-3,
+            .ministry-grid,
+            .involvement-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                min-height: 78vh;
             }
         }
 
-        @media (max-width: 700px) {
-            .nav {
-                min-height: 68px;
-                padding: 8px 16px;
-            }
+        @media (max-width: 600px) {
 
-            .logo {
-                width: 42px;
-                height: 42px;
+            .nav-button {
+                display: none;
             }
 
             .brand-text strong {
-                font-size: 15px;
+                font-size: 13px;
             }
 
             .brand-text span {
                 font-size: 8px;
+                letter-spacing: 2px;
+            }
+
+            .logo {
+                width: 48px;
+                height: 48px;
             }
 
             .hero {
-                padding: 75px 20px 80px;
+                padding: 75px 18px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
             }
 
             .hero p {
@@ -705,10 +800,9 @@
             }
 
             .section {
-                padding: 62px 20px;
+                padding: 70px 0;
             }
 
-            .two-column,
             .cards-3,
             .objectives,
             .pillar-grid,
@@ -718,31 +812,19 @@
                 grid-template-columns: 1fr;
             }
 
-            .section-heading {
-                margin-bottom: 32px;
-            }
-
-            .simple-card,
-            .value-card,
-            .objective,
-            .pillar,
-            .ministry,
-            .involvement {
-                padding: 22px;
-            }
-
-            .scripture {
-                padding: 65px 20px;
-            }
-
-            .impact {
-                padding: 60px 20px;
+            .about-card,
+            .vision-card,
+            .contact-box {
+                padding: 30px;
             }
         }
+
     </style>
 </head>
 
-<body>
+<body><!-- =========================
+     HEADER
+========================= -->
 
 <header>
     <div class="nav">
@@ -750,13 +832,16 @@
         <a href="#home" class="brand">
 
             <div class="logo">
+
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
 
+                    <!-- Outer circle -->
                     <circle cx="100" cy="100" r="96"
                             fill="#071426"
                             stroke="#d4af37"
                             stroke-width="3"/>
 
+                    <!-- Globe -->
                     <circle cx="100" cy="86" r="58"
                             fill="#173c72"
                             stroke="#d4af37"
@@ -774,6 +859,7 @@
                              stroke-width="1.2"
                              opacity="0.45"/>
 
+                    <!-- Land -->
                     <path d="
                         M92 43
                         L104 47
@@ -796,6 +882,7 @@
                         Z"
                         fill="#071426"/>
 
+                    <!-- Heart -->
                     <path d="
                         M100 158
                         C87 146 62 132 62 111
@@ -808,9 +895,14 @@
                         stroke="#d4af37"
                         stroke-width="4"/>
 
-                    <rect x="96" y="58" width="8" height="68" fill="#ffffff"/>
-                    <rect x="82" y="73" width="36" height="8" fill="#ffffff"/>
+                    <!-- Cross -->
+                    <rect x="96" y="58" width="8" height="68"
+                          fill="#ffffff"/>
 
+                    <rect x="82" y="73" width="36" height="8"
+                          fill="#ffffff"/>
+
+                    <!-- Bible -->
                     <path d="
                         M54 159
                         Q77 150 100 161
@@ -825,6 +917,7 @@
                           stroke-width="2"/>
 
                 </svg>
+
             </div>
 
             <div class="brand-text">
@@ -844,259 +937,376 @@
             <a href="#involved">Get Involved</a>
         </nav>
 
-        <a href="#involved" class="nav-button">Partner With Us</a>
+        <a href="#involved" class="nav-button">
+            Partner With Us
+        </a>
 
     </div>
 </header>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
+
     <div class="hero-content">
 
-        <div class="eyebrow">Christ • Love • Mission</div>
+        <div class="eyebrow">
+            ♥ &nbsp; Love That Leads to Christ
+        </div>
 
         <h1>
-            Christ.<br>
-            <span>Love.</span><br>
-            Mission.
+            CHRIST. LOVE. <span>MISSION.</span>
         </h1>
 
         <p>
-            Sharing the Gospel of Jesus Christ, making disciples,
-            mentoring lives, empowering communities and demonstrating
-            God's love through practical service.
+            Join the <strong>Christ Love International</strong> movement —
+            where God's unconditional love moves us into action.
+            We believe love isn't just a message; it's a mission.
+            Together, we are transforming lives, anchoring youth in faith,
+            restoring dignity, and bringing real hope and practical service
+            to our communities.
         </p>
 
         <div class="hero-buttons">
-            <a href="#about" class="btn btn-primary">Discover Our Mission</a>
-            <a href="#involved" class="btn btn-outline">Get Involved</a>
+
+            <a href="#about" class="btn btn-primary">
+                Discover Our Mission
+            </a>
+
+            <a href="#involved" class="btn btn-outline">
+                Get Involved
+            </a>
+
         </div>
 
     </div>
-</section>
+
+</section><!-- =========================
+     ABOUT
+========================= -->
 
 <section class="section section-white" id="about">
     <div class="container">
 
         <div class="section-heading">
             <div class="eyebrow">Who We Are</div>
-            <h2>About <span>Christ Love International</span></h2>
+
+            <h2>
+                About <span>Christ Love International</span>
+            </h2>
+
+            <p>
+                A Christ-centered mission committed to sharing the Gospel,
+                making disciples, mentoring lives, empowering communities
+                and demonstrating the love of Christ through practical service.
+            </p>
         </div>
 
         <div class="about-grid">
 
             <div class="about-text">
 
-                <h3>Christ at the center. Love in action.</h3>
+                <h3>Love that leads to Christ.</h3>
 
                 <p>
-                    Christ Love International is a Christ-centered mission
-                    committed to sharing the Gospel of Jesus Christ and
-                    demonstrating His love through practical service.
+                    Christ Love International exists to make the love of Jesus
+                    visible in both word and action.
                 </p>
 
                 <p>
-                    We believe transformation begins with Christ and extends
-                    into every area of life. Through evangelism, discipleship,
-                    mentorship, empowerment and community outreach, we desire
-                    to see people discover hope, purpose and a future grounded
-                    in God.
+                    We believe the Gospel changes lives, and that genuine love
+                    should move us to care for people spiritually, emotionally,
+                    socially and practically.
                 </p>
 
-                <p>
-                    Our heart is especially focused on young people and
-                    vulnerable communities, while building partnerships that
-                    allow the mission to reach further across Kenya, Africa
-                    and beyond.
-                </p>
-
-                <div class="verse-box">
-                    <p>
-                        “Let all that you do be done in love.”
-                    </p>
-                    <strong>1 Corinthians 16:14</strong>
+                <div class="about-highlight">
+                    Our desire is simple: to point people to Christ,
+                    walk with them in faith and help communities flourish
+                    by God's grace and for His glory.
                 </div>
 
             </div>
 
             <div class="about-card">
+
                 <h3>Our Heart</h3>
 
                 <p>
-                    We don't want the Gospel to remain only a message we speak.
-                    We want it to be a life we live — expressed through
-                    compassion, service, discipleship, integrity and love.
+                    We are passionate about young people, vulnerable communities,
+                    discipleship, evangelism, mentorship, education, skills development
+                    and practical compassion.
                 </p>
+
+                <p style="margin-top: 18px;">
+                    From Kenya to the nations, we desire to serve people,
+                    create opportunities and proclaim the hope found in Jesus Christ.
+                </p>
+
             </div>
 
         </div>
     </div>
 </section>
 
-<section class="section section-white" id="vision">
+
+<!-- =========================
+     VISION & MISSION
+========================= -->
+
+<section class="section section-light" id="vision">
     <div class="container">
 
         <div class="section-heading">
             <div class="eyebrow">Where We Are Going</div>
-            <h2>Vision & <span>Mission</span></h2>
+
+            <h2>
+                Vision & <span>Mission</span>
+            </h2>
         </div>
 
-        <div class="two-column">
+        <div class="vision-grid">
 
-            <div class="simple-card">
-                <div class="card-label">Our Vision</div>
+            <div class="vision-card">
 
-                <h3>A transformed generation.</h3>
+                <h3>Our Vision</h3>
 
                 <p>
-                    To see a transformed generation living purposefully in Christ,
-                    spreading His love, and positively impacting communities
-                    across Kenya and beyond.
+                    To see lives and communities transformed by the love,
+                    truth and hope of Jesus Christ, with empowered young people
+                    becoming faithful leaders who impact their communities and beyond.
                 </p>
+
             </div>
 
-            <div class="simple-card dark">
-                <div class="card-label">Our Mission</div>
+            <div class="vision-card">
 
-                <h3>Faith expressed through love.</h3>
+                <h3>Our Mission</h3>
 
                 <p>
-                    To share the Gospel of Jesus Christ, mentor youth, empower
-                    communities, and demonstrate God's love through holistic
-                    ministry — touching spiritual, emotional and physical needs.
+                    To proclaim the Gospel, make disciples, mentor young people,
+                    serve vulnerable communities, develop skills and create opportunities
+                    while demonstrating the love of Christ through practical action.
                 </p>
+
             </div>
 
         </div>
     </div>
 </section>
+
+
+<!-- =========================
+     VALUES
+========================= -->
 
 <section class="section section-light" id="values">
     <div class="container">
 
         <div class="section-heading">
+
             <div class="eyebrow">What Guides Us</div>
-            <h2>Our Core <span>Values</span></h2>
+
+            <h2>
+                Our Core <span>Values</span>
+            </h2>
+
             <p>
                 The principles that shape how we serve, lead and represent Christ.
             </p>
+
         </div>
 
         <div class="cards-3">
 
             <div class="value-card">
                 <div class="number">01</div>
+
                 <h3>Christ-Centeredness</h3>
-                <p>Jesus Christ is the center and foundation of everything we do.</p>
+
+                <p>
+                    Jesus Christ is the center and foundation of everything we do.
+                </p>
             </div>
 
             <div class="value-card">
                 <div class="number">02</div>
+
                 <h3>Unconditional Love</h3>
-                <p>Serving people with kindness, empathy, dignity and respect.</p>
+
+                <p>
+                    Serving people with kindness, empathy, dignity and respect.
+                </p>
             </div>
 
             <div class="value-card">
                 <div class="number">03</div>
+
                 <h3>Integrity & Transparency</h3>
-                <p>Upholding honesty, accountability and responsible stewardship.</p>
+
+                <p>
+                    Upholding honesty, accountability and responsible stewardship.
+                </p>
             </div>
 
             <div class="value-card">
                 <div class="number">04</div>
+
                 <h3>Servant Leadership</h3>
-                <p>Leading by serving others, following the example of Jesus.</p>
+
+                <p>
+                    Leading by serving others, following the example of Jesus.
+                </p>
             </div>
 
             <div class="value-card">
                 <div class="number">05</div>
+
                 <h3>Community Empowerment</h3>
-                <p>Building capacity and creating sustainable opportunities for people.</p>
+
+                <p>
+                    Building capacity and creating sustainable opportunities for people.
+                </p>
             </div>
 
             <div class="value-card">
                 <div class="number">06</div>
+
                 <h3>Excellence</h3>
-                <p>Giving our best in ministry, service and organizational work.</p>
+
+                <p>
+                    Giving our best in ministry, service and organizational work.
+                </p>
             </div>
 
         </div>
     </div>
 </section>
 
+
+<!-- =========================
+     OBJECTIVES
+========================= -->
+
 <section class="section section-white" id="objectives">
     <div class="container">
 
         <div class="section-heading">
+
             <div class="eyebrow">What We Aim To Do</div>
-            <h2>Our Key <span>Objectives</span></h2>
+
+            <h2>
+                Our Key <span>Objectives</span>
+            </h2>
+
         </div>
 
         <div class="objectives">
 
             <div class="objective">
                 <div class="objective-number">01</div>
+
                 <h3>Gospel Proclamation</h3>
-                <p>Share the Gospel through missions, outreach and digital evangelism.</p>
+
+                <p>
+                    Share the Gospel through missions, outreach and digital evangelism.
+                </p>
             </div>
 
             <div class="objective">
                 <div class="objective-number">02</div>
+
                 <h3>Youth Mentorship</h3>
-                <p>Guide young people through life skills, career mentorship and spiritual growth.</p>
+
+                <p>
+                    Guide young people through life skills, career mentorship and spiritual growth.
+                </p>
             </div>
 
             <div class="objective">
                 <div class="objective-number">03</div>
+
                 <h3>Discipleship Programs</h3>
-                <p>Develop Bible study groups, prayer communities and leadership training.</p>
+
+                <p>
+                    Develop Bible study groups, prayer communities and leadership training.
+                </p>
             </div>
 
             <div class="objective">
                 <div class="objective-number">04</div>
+
                 <h3>Charity Outreach</h3>
-                <p>Provide practical support to vulnerable families and communities.</p>
+
+                <p>
+                    Provide practical support to vulnerable families and communities.
+                </p>
             </div>
 
             <div class="objective">
                 <div class="objective-number">05</div>
+
                 <h3>Educational Support</h3>
-                <p>Support students through learning materials, mentorship and opportunities.</p>
+
+                <p>
+                    Support students through learning materials, mentorship and opportunities.
+                </p>
             </div>
 
             <div class="objective">
                 <div class="objective-number">06</div>
+
                 <h3>Mental Health & Guidance</h3>
-                <p>Promote healthy conversations, guidance and responsible support.</p>
+
+                <p>
+                    Promote healthy conversations, guidance and responsible support.
+                </p>
             </div>
 
             <div class="objective">
                 <div class="objective-number">07</div>
+
                 <h3>Talent Development</h3>
-                <p>Encourage youth through music, creative arts, media and sports.</p>
+
+                <p>
+                    Encourage youth through music, creative arts, media and sports.
+                </p>
             </div>
 
             <div class="objective">
                 <div class="objective-number">08</div>
+
                 <h3>Kingdom Partnerships</h3>
-                <p>Build meaningful partnerships with churches, schools and missions.</p>
+
+                <p>
+                    Build meaningful partnerships with churches, schools and missions.
+                </p>
             </div>
 
         </div>
     </div>
-</section>
+</section><!-- =========================
+     PROGRAM PILLARS
+========================= -->
 
 <section class="section section-light" id="pillars">
     <div class="container">
 
         <div class="section-heading">
             <div class="eyebrow">How We Serve</div>
-            <h2>Program <span>Pillars</span></h2>
+
+            <h2>
+                Program <span>Pillars</span>
+            </h2>
         </div>
 
         <div class="pillar-grid">
 
             <div class="pillar">
                 <h3>Gospel & Discipleship</h3>
+
                 <p>
                     Evangelism, Bible teaching, prayer, discipleship and spiritual growth.
                 </p>
@@ -1104,6 +1314,7 @@
 
             <div class="pillar">
                 <h3>Youth & Mentorship</h3>
+
                 <p>
                     Helping young people discover identity, purpose, character and direction.
                 </p>
@@ -1111,6 +1322,7 @@
 
             <div class="pillar">
                 <h3>Empowerment & Skills</h3>
+
                 <p>
                     Developing talents, skills and opportunities that help people become self-reliant.
                 </p>
@@ -1118,6 +1330,7 @@
 
             <div class="pillar">
                 <h3>Compassion & Outreach</h3>
+
                 <p>
                     Demonstrating the love of Christ through practical service and community outreach.
                 </p>
@@ -1127,81 +1340,145 @@
     </div>
 </section>
 
+
+<!-- =========================
+     MINISTRIES
+========================= -->
+
 <section class="section section-white" id="ministries">
     <div class="container">
 
         <div class="section-heading">
+
             <div class="eyebrow">Faith In Action</div>
-            <h2>Serving people while keeping <span>Christ at the center.</span></h2>
+
+            <h2>
+                Serving people while keeping
+                <span>Christ at the center.</span>
+            </h2>
+
             <p>
                 We desire our faith to be visible through both the Gospel we proclaim
                 and the lives we serve.
             </p>
+
         </div>
 
         <div class="ministry-grid">
 
             <div class="ministry">
                 <div class="ministry-icon">✝</div>
+
                 <h3>Gospel Outreach</h3>
-                <p>Sharing the message of Jesus through personal evangelism, outreach and missions.</p>
+
+                <p>
+                    Sharing the message of Jesus through personal evangelism,
+                    outreach and missions.
+                </p>
             </div>
 
             <div class="ministry">
                 <div class="ministry-icon">📖</div>
+
                 <h3>Discipleship</h3>
-                <p>Helping believers grow deeper in Scripture, prayer and their walk with Christ.</p>
+
+                <p>
+                    Helping believers grow deeper in Scripture, prayer and
+                    their walk with Christ.
+                </p>
             </div>
 
             <div class="ministry">
                 <div class="ministry-icon">🎓</div>
+
                 <h3>School & Campus</h3>
-                <p>Encouraging students through mentorship, faith conversations and purpose-driven living.</p>
+
+                <p>
+                    Encouraging students through mentorship, faith conversations
+                    and purpose-driven living.
+                </p>
             </div>
 
             <div class="ministry">
                 <div class="ministry-icon">🤝</div>
+
                 <h3>Mentorship</h3>
-                <p>Walking alongside young people and helping them develop character and direction.</p>
+
+                <p>
+                    Walking alongside young people and helping them develop
+                    character and direction.
+                </p>
             </div>
 
             <div class="ministry">
                 <div class="ministry-icon">❤️</div>
+
                 <h3>Practical Love</h3>
-                <p>Responding to real needs with compassion, dignity and Christ-centered service.</p>
+
+                <p>
+                    Responding to real needs with compassion, dignity
+                    and Christ-centered service.
+                </p>
             </div>
 
             <div class="ministry">
                 <div class="ministry-icon">🌍</div>
+
                 <h3>Community Outreach</h3>
-                <p>Serving vulnerable communities and building relationships that reflect God's love.</p>
+
+                <p>
+                    Serving vulnerable communities and building relationships
+                    that reflect God's love.
+                </p>
             </div>
 
         </div>
     </div>
 </section>
 
+
+<!-- =========================
+     SCRIPTURE
+========================= -->
+
 <section class="scripture">
-    <div class="eyebrow">Our Foundation</div>
+
+    <div class="eyebrow">
+        Our Foundation
+    </div>
 
     <blockquote>
         “For from Him and through Him and for Him are all things.
         To Him be the glory forever. Amen.”
     </blockquote>
 
-    <cite>Romans 11:36</cite>
+    <cite>
+        Romans 11:36
+    </cite>
+
 </section>
+
+
+<!-- =========================
+     FAITH IN ACTION
+========================= -->
 
 <section class="section section-light" id="action">
     <div class="container">
 
         <div class="section-heading">
+
             <div class="eyebrow">On The Ground</div>
-            <h2>Faith expressed through <span>love.</span></h2>
+
+            <h2>
+                Faith expressed through <span>love.</span>
+            </h2>
+
             <p>
                 We want our faith to be visible through both the Gospel we proclaim
                 and the lives we serve.
             </p>
+
         </div>
 
         <div class="action-grid">
@@ -1226,58 +1503,97 @@
     </div>
 </section>
 
+
+<!-- =========================
+     IMPACT
+========================= -->
+
 <section class="impact">
-    <h2>Small beginnings. Eternal purpose.</h2>
+
+    <h2>
+        Small beginnings. Eternal purpose.
+    </h2>
 
     <p>
         We may be starting small, but our desire is big:
         to see lives transformed by the love and truth of Jesus Christ.
     </p>
 
-    <strong>From Kenya to the nations. 🌍</strong>
-</section>
+    <strong>
+        From Kenya to the nations. 🌍
+    </strong>
+
+</section><!-- =========================
+     GET INVOLVED
+========================= -->
 
 <section class="section section-white" id="involved">
     <div class="container">
 
         <div class="section-heading">
+
             <div class="eyebrow">Walk With Us</div>
-            <h2>There is a <span>place for you.</span></h2>
+
+            <h2>
+                There is a <span>place for you.</span>
+            </h2>
+
             <p>
                 You can be part of what God is doing through prayer,
                 service, encouragement or partnership.
             </p>
+
         </div>
 
         <div class="involvement-grid">
 
             <div class="involvement">
+
                 <div class="involvement-icon">🙏🏽</div>
+
                 <h3>Pray</h3>
+
                 <p>
-                    Pray for the mission, the people we serve and the work God is leading us into.
+                    Pray for the mission, the people we serve and
+                    the work God is leading us into.
                 </p>
+
             </div>
 
             <div class="involvement">
+
                 <div class="involvement-icon">🤲🏽</div>
+
                 <h3>Serve</h3>
+
                 <p>
-                    Use your time, gifts and skills to serve people and advance the mission.
+                    Use your time, gifts and skills to serve people
+                    and advance the mission.
                 </p>
+
             </div>
 
             <div class="involvement">
+
                 <div class="involvement-icon">❤️</div>
+
                 <h3>Partner</h3>
+
                 <p>
-                    Stand with us through encouragement, resources, relationships and prayer.
+                    Stand with us through encouragement, resources,
+                    relationships and prayer.
                 </p>
+
             </div>
 
         </div>
     </div>
 </section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section class="section contact" id="contact">
     <div class="container">
@@ -1285,9 +1601,14 @@
         <div class="contact-grid">
 
             <div class="contact-info">
-                <div class="eyebrow">Connect With Us</div>
 
-                <h3>Let's walk this mission together.</h3>
+                <div class="eyebrow">
+                    Connect With Us
+                </div>
+
+                <h3>
+                    Let's walk this mission together.
+                </h3>
 
                 <p>
                     Whether you want to pray, serve, partner or simply learn more
@@ -1295,18 +1616,33 @@
                 </p>
 
                 <div class="contact-item">
+
                     <strong>Location</strong>
-                    <span>Kenya • East Africa</span>
+
+                    <span>
+                        Kenya • East Africa
+                    </span>
+
                 </div>
 
                 <div class="contact-item">
+
                     <strong>Mission</strong>
-                    <span>From Kenya to the nations.</span>
+
+                    <span>
+                        From Kenya to the nations.
+                    </span>
+
                 </div>
+
             </div>
 
+
             <div class="contact-box">
-                <h3>Christ. Love. Mission.</h3>
+
+                <h3>
+                    Christ. Love. Mission.
+                </h3>
 
                 <p>
                     Everything we do begins with Christ, flows through love,
@@ -1317,11 +1653,17 @@
                    class="btn btn-primary">
                     Contact Us
                 </a>
+
             </div>
 
         </div>
     </div>
 </section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1342,6 +1684,7 @@
     </p>
 
 </footer>
+
 
 </body>
 </html>
