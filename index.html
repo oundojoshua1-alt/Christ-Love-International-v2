@@ -1,800 +1,872 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Christ Love International | Christ. Love. Mission.</title>
+    <title>Christ Love International | Christ. Love. Mission.</title>
 
-  <meta
-    name="description"
-    content="Christ Love International is a Christ-centered mission dedicated to sharing the Gospel, mentoring youth, empowering communities, and demonstrating the love of Christ across Kenya and beyond."
-  />
+    <meta name="description" content="Christ Love International is a Christ-centered mission sharing the Gospel, making disciples, mentoring lives, empowering communities and demonstrating the love of Christ through practical service.">
 
-  <meta name="theme-color" content="#060A12" />
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            gold: "#D4AF37",
-            goldLight: "#F3E5AB",
-            goldBright: "#FFC72C",
-            goldDark: "#AA771C",
-            navyDark: "#030712",
-            navyCard: "#0B132B",
-            navyBlue: "#1E3A8A",
-            blueGlow: "#2563EB"
-          },
-
-          fontFamily: {
-            cinzel: ["Cinzel", "serif"],
-            jakarta: ["Plus Jakarta Sans", "sans-serif"],
-            playfair: ["Playfair Display", "serif"]
-          }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
-    }
-  </script>
 
-  <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f8f6;
+            color: #172033;
+            line-height: 1.6;
+        }
 
-    body {
-      background:
-        radial-gradient(circle at 50% -10%, rgba(37,99,235,.16), transparent 35%),
-        #030712;
-      color: white;
-      font-family: "Plus Jakarta Sans", sans-serif;
-      overflow-x: hidden;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .gold-text {
-      background: linear-gradient(
-        120deg,
-        #aa771c,
-        #f3e5ab,
-        #ffc72c,
-        #d4af37,
-        #f3e5ab
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+        img,
+        svg {
+            max-width: 100%;
+        }
 
-    .gold-border {
-      border: 1px solid rgba(212,175,55,.45);
-    }
+        /* =========================
+           COLORS
+        ========================= */
 
-    .gold-glow {
-      box-shadow:
-        0 0 20px rgba(212,175,55,.18),
-        inset 0 0 25px rgba(212,175,55,.04);
-    }
+        :root {
+            --navy: #071426;
+            --navy-dark: #050d19;
+            --gold: #d4af37;
+            --gold-light: #e5c65a;
+            --white: #ffffff;
+            --cream: #f8f8f6;
+            --text: #172033;
+            --muted: #667085;
+            --border: #e5e7eb;
+        }
 
-    .blue-glow {
-      box-shadow:
-        0 0 70px rgba(37,99,235,.20);
-    }
+        /* =========================
+           NAVIGATION
+        ========================= */
 
-    .glass {
-      background: rgba(11,19,43,.68);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,.07);
-    }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 20, 38, 0.97);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+        }
 
-    .section-line {
-      width: 70px;
-      height: 2px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d4af37,
-        transparent
-      );
-      margin: auto;
-    }
+        .nav {
+            max-width: 1180px;
+            margin: auto;
+            min-height: 76px;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
 
-    .hero-grid {
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 50px 50px;
-    }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+        }
 
-    .logo-shadow {
-      filter:
-        drop-shadow(0 0 12px rgba(255,199,44,.25))
-        drop-shadow(0 0 35px rgba(37,99,235,.18));
-    }
+        /* Small refined logo */
+        .logo {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
 
-    .pillar-card {
-      transition: .35s ease;
-    }
+        .brand-text strong {
+            display: block;
+            color: var(--white);
+            font-size: 17px;
+            letter-spacing: 1.5px;
+            line-height: 1.1;
+        }
 
-    .pillar-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(212,175,55,.45);
-      box-shadow: 0 20px 50px rgba(0,0,0,.35);
-    }
+        .brand-text span {
+            display: block;
+            color: var(--gold);
+            font-size: 9px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-top: 3px;
+        }
 
-    .value-card {
-      transition: .3s ease;
-    }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            font-size: 13px;
+            color: #e5e7eb;
+        }
 
-    .value-card:hover {
-      transform: translateY(-5px);
-    }
+        nav a {
+            transition: 0.2s ease;
+        }
 
-    .mobile-menu {
-      display: none;
-    }
+        nav a:hover {
+            color: var(--gold);
+        }
 
-    .mobile-menu.active {
-      display: block;
-    }
+        .nav-button {
+            padding: 9px 16px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.2s ease;
+            white-space: nowrap;
+        }
 
-  </style>
+        .nav-button:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background: var(--navy);
+            color: var(--white);
+            padding: 100px 24px 105px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.035);
+            top: -250px;
+            right: -170px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.08;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #d5dae2;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid var(--gold);
+            transition: 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+        }
+
+        .btn-outline {
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            scroll-margin-top: 85px;
+        }
+
+        .section {
+            padding: 78px 24px;
+        }
+
+        .section-light {
+            background: var(--cream);
+        }
+
+        .section-white {
+            background: var(--white);
+        }
+
+        .section-dark {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: auto;
+        }
+
+        .section-heading {
+            max-width: 760px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.2;
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        .section-heading h2 span {
+            color: var(--gold);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 680px;
+            margin: auto;
+        }
+
+        .dark-heading h2 {
+            color: var(--white);
+        }
+
+        .dark-heading p {
+            color: #cbd1da;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 27px;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .verse-box {
+            margin-top: 25px;
+            padding: 20px 22px;
+            border-left: 4px solid var(--gold);
+            background: var(--white);
+        }
+
+        .verse-box p {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .verse-box strong {
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        .about-card {
+            background: var(--navy);
+            color: var(--white);
+            padding: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        .about-card h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            color: #d5dae2;
+            font-size: 14px;
+        }
+
+        /* =========================
+           VISION / MISSION
+        ========================= */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .simple-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 30px;
+        }
+
+        .simple-card.dark {
+            background: var(--navy);
+            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--white);
+        }
+
+        .card-label {
+            color: var(--gold);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .simple-card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .simple-card p {
+            color: var(--muted);
+        }
+
+        .simple-card.dark p {
+            color: #d5dae2;
+        }
+
+        /* =========================
+           VALUES
+        ========================= */
+
+        .cards-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 25px;
+            border: 1px solid var(--border);
+            transition: 0.2s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--gold);
+        }
+
+        .number {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .value-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--navy);
+        }
+
+        .value-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           OBJECTIVES
+        ========================= */
+
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .objective {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 23px;
+        }
+
+        .objective-number {
+            color: var(--gold);
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .objective h3 {
+            color: var(--navy);
+            font-size: 16px;
+            margin-bottom: 7px;
+        }
+
+        .objective p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           PROGRAM PILLARS
+        ========================= */
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .pillar {
+            background: var(--navy);
+            color: var(--white);
+            padding: 28px 22px;
+            border-top: 3px solid var(--gold);
+        }
+
+        .pillar h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .pillar p {
+            color: #cbd1da;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MINISTRIES
+        ========================= */
+
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ministry {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 25px;
+        }
+
+        .ministry-icon {
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 13px;
+        }
+
+        .ministry h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .ministry p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           SCRIPTURE
+        ========================= */
+
+        .scripture {
+            background: var(--navy);
+            color: var(--white);
+            padding: 85px 24px;
+            text-align: center;
+        }
+
+        .scripture blockquote {
+            max-width: 800px;
+            margin: auto;
+            font-size: clamp(22px, 3vw, 31px);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .scripture cite {
+            display: block;
+            margin-top: 20px;
+            color: var(--gold);
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           FAITH IN ACTION
+        ========================= */
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .action-item {
+            padding: 20px;
+            background: var(--white);
+            border-left: 3px solid var(--gold);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .action-item strong {
+            color: var(--navy);
+        }
+
+        /* =========================
+           IMPACT
+        ========================= */
+
+        .impact {
+            background: var(--gold);
+            color: var(--navy);
+            text-align: center;
+            padding: 75px 24px;
+        }
+
+        .impact h2 {
+            font-size: clamp(29px, 4vw, 43px);
+            margin-bottom: 12px;
+        }
+
+        .impact p {
+            max-width: 720px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+        .impact strong {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        /* =========================
+           GET INVOLVED
+        ========================= */
+
+        .involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .involvement {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .involvement h3 {
+            color: var(--navy);
+            margin: 12px 0 8px;
+        }
+
+        .involvement-icon {
+            font-size: 26px;
+            color: var(--gold);
+        }
+
+        .involvement p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            color: var(--navy);
+            font-size: 27px;
+            margin-bottom: 13px;
+        }
+
+        .contact-info p {
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--navy);
+            font-size: 14px;
+        }
+
+        .contact-item span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .contact-box {
+            background: var(--navy);
+            color: var(--white);
+            padding: 30px;
+        }
+
+        .contact-box h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #d5dae2;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--navy-dark);
+            color: #aeb6c2;
+            padding: 35px 24px;
+            text-align: center;
+        }
+
+        .footer-brand {
+            color: var(--white);
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        footer p {
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .footer-tagline {
+            color: var(--gold);
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1000px) {
+            nav {
+                display: none;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives,
+            .pillar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav {
+                min-height: 68px;
+                padding: 8px 16px;
+            }
+
+            .logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .brand-text strong {
+                font-size: 15px;
+            }
+
+            .brand-text span {
+                font-size: 8px;
+            }
+
+            .hero {
+                padding: 75px 20px 80px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 62px 20px;
+            }
+
+            .two-column,
+            .cards-3,
+            .objectives,
+            .pillar-grid,
+            .ministry-grid,
+            .action-grid,
+            .involvement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                margin-bottom: 32px;
+            }
+
+            .simple-card,
+            .value-card,
+            .objective,
+            .pillar,
+            .ministry,
+            .involvement {
+                padding: 22px;
+            }
+
+            .scripture {
+                padding: 65px 20px;
+            }
+
+            .impact {
+                padding: 60px 20px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-<!-- ========================================================= -->
-<!-- NAVIGATION -->
-<!-- ========================================================= -->
-
-<header class="fixed top-0 left-0 right-0 z-50">
-
-  <nav class="glass">
-
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-      <div class="h-20 flex items-center justify-between">
-
-        <!-- BRAND -->
-        <a href="#home" class="flex items-center gap-3">
-
-          <!-- REFINED LOGO -->
-          <svg
-            width="55"
-            height="55"
-            viewBox="0 0 220 220"
-            class="logo-shadow"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-
-            <defs>
-
-              <radialGradient id="globeGradient">
-                <stop offset="0%" stop-color="#2563EB"/>
-                <stop offset="65%" stop-color="#102A72"/>
-                <stop offset="100%" stop-color="#030712"/>
-              </radialGradient>
-
-              <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#8C6418"/>
-                <stop offset="25%" stop-color="#F3E5AB"/>
-                <stop offset="48%" stop-color="#FFC72C"/>
-                <stop offset="72%" stop-color="#D4AF37"/>
-                <stop offset="100%" stop-color="#9A6C16"/>
-              </linearGradient>
-
-              <linearGradient id="pageGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#8C6418"/>
-                <stop offset="50%" stop-color="#FFF2B8"/>
-                <stop offset="100%" stop-color="#C79522"/>
-              </linearGradient>
-
-              <filter id="goldGlow">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-
-              <clipPath id="globeClip">
-                <circle cx="110" cy="91" r="72"/>
-              </clipPath>
-
-            </defs>
-
-
-            <!-- OUTER ATMOSPHERE -->
-            <circle
-              cx="110"
-              cy="91"
-              r="82"
-              fill="none"
-              stroke="#D4AF37"
-              stroke-opacity=".22"
-              stroke-width="2"
-            />
-
-            <circle
-              cx="110"
-              cy="91"
-              r="76"
-              fill="url(#globeGradient)"
-              stroke="#D4AF37"
-              stroke-width="2.5"
-            />
-
-
-            <!-- GLOBE LATITUDE -->
-            <g
-              clip-path="url(#globeClip)"
-              fill="none"
-              stroke="#60A5FA"
-              stroke-opacity=".22"
-              stroke-width="1"
-            >
-
-              <ellipse cx="110" cy="91" rx="70" ry="25"/>
-              <ellipse cx="110" cy="91" rx="70" ry="47"/>
-              <ellipse cx="110" cy="91" rx="70" ry="62"/>
-
-              <path d="M110 19 C72 45 72 137 110 163"/>
-              <path d="M110 19 C148 45 148 137 110 163"/>
-
-            </g>
-
-
-            <!-- AFRICA -->
-            <path
-              d="
-              M103 42
-              C96 48 96 57 100 64
-              L96 72
-              L101 82
-              L98 91
-              L105 100
-              L104 111
-              L111 124
-              L115 141
-              L123 151
-              L129 137
-              L127 124
-              L134 114
-              L130 102
-              L135 92
-              L128 83
-              L130 73
-              L121 68
-              L118 57
-              L111 51
-              Z"
-              fill="#071426"
-              stroke="#D4AF37"
-              stroke-opacity=".30"
-              stroke-width="1.2"
-            />
-
-
-            <!-- HEART RIBBON -->
-            <path
-              d="
-              M110 144
-              C76 126 48 104 48 76
-              C48 53 65 40 82 40
-              C96 40 106 48 110 59
-              C114 48 124 40 138 40
-              C155 40 172 53 172 76
-              C172 103 145 127 110 144
-              Z"
-              fill="none"
-              stroke="url(#goldGradient)"
-              stroke-width="7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              filter="url(#goldGlow)"
-            />
-
-
-            <!-- CROSS GLOW -->
-            <g filter="url(#goldGlow)">
-
-              <rect
-                x="104"
-                y="32"
-                width="12"
-                height="92"
-                rx="3"
-                fill="url(#goldGradient)"
-              />
-
-              <rect
-                x="84"
-                y="52"
-                width="52"
-                height="12"
-                rx="3"
-                fill="url(#goldGradient)"
-              />
-
-            </g>
-
-
-            <!-- CROSS WHITE CORE -->
-            <rect
-              x="107"
-              y="36"
-              width="6"
-              height="78"
-              rx="2"
-              fill="#FFFDF2"
-            />
-
-            <rect
-              x="89"
-              y="55"
-              width="42"
-              height="6"
-              rx="2"
-              fill="#FFFDF2"
-            />
-
-
-            <!-- OPEN BIBLE -->
-            <path
-              d="M30 158
-                 Q68 145 109 162
-                 Q151 145 190 158
-                 L190 184
-                 Q151 170 110 186
-                 Q69 170 30 184
-                 Z"
-              fill="url(#pageGradient)"
-              stroke="#D4AF37"
-              stroke-width="2"
-            />
-
-            <path
-              d="M110 162 L110 186"
-              stroke="#7A5410"
-              stroke-width="2"
-            />
-
-            <path
-              d="M38 163 Q72 153 103 167"
-              fill="none"
-              stroke="#FFF4C6"
-              stroke-width="1.5"
-              opacity=".75"
-            />
-
-            <path
-              d="M117 167 Q149 153 182 163"
-              fill="none"
-              stroke="#FFF4C6"
-              stroke-width="1.5"
-              opacity=".75"
-            />
-
-          </svg>
-
-
-          <div class="leading-tight hidden sm:block">
-
-            <div class="font-cinzel font-bold tracking-[.18em] text-sm">
-              CHRIST LOVE
-            </div>
-
-            <div class="text-[9px] tracking-[.42em] text-gold">
-              INTERNATIONAL
-            </div>
-
-          </div>
-
-        </a>
-
-
-        <!-- DESKTOP LINKS -->
-
-        <div class="hidden lg:flex items-center gap-7 text-sm">
-
-          <a href="#home" class="hover:text-gold transition">Home</a>
-          <a href="#about" class="hover:text-gold transition">About</a>
-          <a href="#vision" class="hover:text-gold transition">Vision</a>
-          <a href="#values" class="hover:text-gold transition">Values</a>
-          <a href="#objectives" class="hover:text-gold transition">Objectives</a>
-          <a href="#pillars" class="hover:text-gold transition">Programs</a>
-
-          <a
-            href="#get-involved"
-            class="px-5 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-black transition font-semibold"
-          >
-            Partner With Us
-          </a>
-
-        </div>
-
-
-        <!-- MOBILE BUTTON -->
-
-        <button
-          id="menuBtn"
-          class="lg:hidden text-2xl text-gold"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
-      </div>
-
-
-      <!-- MOBILE MENU -->
-
-      <div id="mobileMenu" class="mobile-menu pb-6">
-
-        <div class="flex flex-col gap-5 text-sm">
-
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#vision">Vision & Mission</a>
-          <a href="#values">Core Values</a>
-          <a href="#objectives">Objectives</a>
-          <a href="#pillars">Program Pillars</a>
-          <a href="#get-involved">Get Involved</a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </nav>
-
-</header>
-
-
-<!-- ========================================================= -->
-<!-- HERO -->
-<!-- ========================================================= -->
-
-<section
-  id="home"
-  class="relative min-h-screen flex items-center pt-28 hero-grid overflow-hidden"
->
-
-  <div class="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-transparent to-navyDark"></div>
-
-
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
-
-    <div class="grid lg:grid-cols-2 gap-14 items-center">
-
-
-      <!-- LEFT -->
-
-      <div>
-
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass gold-border text-xs tracking-[.25em] uppercase text-gold mb-7"
-        >
-          <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-          Christ. Love. Mission.
-        </div>
-
-
-        <h1
-          class="font-cinzel text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight"
-        >
-          LOVE THAT
-          <span class="gold-text block">
-            POINTS PEOPLE
-          </span>
-          TO CHRIST.
-        </h1>
-
-
-        <p class="mt-7 text-gray-300 text-base sm:text-lg leading-8 max-w-2xl">
-
-          Sharing Christ's Love. Transforming Lives. Raising a generation
-          that lives in faith, compassion, and purpose across Kenya and
-          to the ends of the earth.
-
-        </p>
-
-
-        <div class="mt-8 flex flex-wrap gap-4">
-
-          <a
-            href="#vision"
-            class="px-7 py-3.5 rounded-full bg-gold text-black font-bold hover:bg-goldLight transition"
-          >
-            Explore Our Mission
-          </a>
-
-          <a
-            href="#get-involved"
-            class="px-7 py-3.5 rounded-full border border-white/20 hover:border-gold hover:text-gold transition"
-          >
-            Get Involved
-          </a>
-
-        </div>
-
-
-        <div class="mt-10 flex items-center gap-4">
-
-          <div class="w-10 h-px bg-gold"></div>
-
-          <p class="font-playfair italic text-gray-400">
-            “For from Him and through Him and for Him are all things.”
-          </p>
-
-        </div>
-
-        <p class="text-gold text-xs tracking-widest mt-2 ml-14">
-          ROMANS 11:36
-        </p>
-
-      </div>
-
-
-      <!-- RIGHT LOGO DISPLAY -->
-
-      <div class="flex justify-center">
-
-        <div
-          class="relative w-[330px] h-[330px] sm:w-[430px] sm:h-[430px] flex items-center justify-center"
-        >
-
-          <div
-            class="absolute inset-0 rounded-full bg-blue-600/10 blur-3xl"
-          ></div>
-
-          <div class="relative z-10">
-
-            <svg
-              viewBox="0 0 220 220"
-              class="w-[330px] sm:w-[420px] logo-shadow"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-
-              <defs>
-
-                <radialGradient id="heroGlobe">
-                  <stop offset="0%" stop-color="#2563EB"/>
-                  <stop offset="65%" stop-color="#102A72"/>
-                  <stop offset="100%" stop-color="#030712"/>
-                </radialGradient>
-
-                <linearGradient id="heroGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#8C6418"/>
-                  <stop offset="25%" stop-color="#F3E5AB"/>
-                  <stop offset="48%" stop-color="#FFC72C"/>
-                  <stop offset="72%" stop-color="#D4AF37"/>
-                  <stop offset="100%" stop-color="#9A6C16"/>
-                </linearGradient>
-
-                <linearGradient id="heroPage" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#8C6418"/>
-                  <stop offset="50%" stop-color="#FFF2B8"/>
-                  <stop offset="100%" stop-color="#C79522"/>
-                </linearGradient>
-
-                <filter id="heroGlow">
-                  <feGaussianBlur stdDeviation="3"/>
-                  <feMerge>
-                    <feMergeNode/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-
-                <clipPath id="heroClip">
-                  <circle cx="110" cy="91" r="72"/>
-                </clipPath>
-
-              </defs>
-
-
-              <!-- Globe -->
-
-              <circle
-                cx="110"
-                cy="91"
-                r="82"
-                fill="none"
-                stroke="#D4AF37"
-                stroke-opacity=".25"
-                stroke-width="2"
-              />
-
-              <circle
-                cx="110"
-                cy="91"
-                r="76"
-                fill="url(#heroGlobe)"
-                stroke="#D4AF37"
-                stroke-width="2.5"
-              />
-
-
-              <!-- Globe grid -->
-
-              <g
-                clip-path="url(#heroClip)"
-                fill="none"
-                stroke="#60A5FA"
-                stroke-opacity=".22"
-                stroke-width="1"
-              >
-
-                <ellipse cx="110" cy="91" rx="70" ry="25"/>
-                <ellipse cx="110" cy="91" rx="70" ry="47"/>
-                <ellipse cx="110" cy="91" rx="70" ry="62"/>
-
-                <path d="M110 19 C72 45 72 137 110 163"/>
-                <path d="M110 19 C148 45 148 137 110 163"/>
-
-              </g>
-
-
-              <!-- Africa -->
-
-              <path
-                d="
-                M103 42
-                C96 48 96 57 100 64
-                L96 72
-                L101 82
-                L98 91
-                L105 100
-                L104 111
-                L111 124
-                L115 141
-                L123 151
-                L129 137
-                L127 124
-                L134 114
-                L130 102
-                L135 92
-                L128 83
-                L130 73
-                L121 68
-                L118 57
-                L111 51
-                Z"
-                fill="#071426"
-                stroke="#D4AF37"
-                stroke-opacity=".30"
-              />
-
-
-              <!-- Gold heart -->
-
-              <path
-                d="
-                M110 144
-                C76 126 48 104 48 76
-                C48 53 65 40 82 40
-                C96 40 106 48 110 59
-                C114 48 124 40 138 40
-                C155 40 172 53 172 76
-                C172 103 145 127 110 144
-                Z"
-                fill="none"
-                stroke="url(#heroGold)"
-                stroke-width="7"
-                stroke-linecap="round"
-                filter="url(#heroGlow)"
-              />
-
-
-              <!-- Cross -->
-
-              <g filter="url(#heroGlow)">
-
-                <rect
-                  x="104"
-                  y="32"
-                  width="12"
-                  height="92"
-                  rx="3"
-                  fill="url(#heroGold)"
-                />
-
-                <rect
-                  x="84"
-                  y="52"
-                  width="52"
-                  height="12"
-                  rx="3"
-                  fill="url(#heroGold)"
-                />
-
-              </g>
-
-              <rect
-                x="107"
-                y="36"
-                width="6"
-                height="78"
-                fill="#FFFDF2"
-              />
-
-              <rect
-                x="89"
-                y="55"
-                width="42"
-                height="6"
-                fill="#FFFDF2"
-              />
-
-
-              <!-- Bible -->
-
-              <path
-                d="M30 158
-                   Q68 145 109 162
-                   Q151 145 190 158
-                   L190 184
-                   Q151 170 110 186
-                   Q69 170 30 184
-                   Z"
-                fill="url(#heroPage)"
-                stroke="#D4AF37"
-                stroke-width="2"
-              />
-
-              <path
-                d="M110 162 L110 186"
-                stroke="#7A5410"
-                stroke-width="2"
-              />
-
-              <path
-                d="M38 163 Q72 153 103 167"
-                fill="none"
-                stroke="#FFF4C6"
-                stroke-width="1.5"
-              />
-
-              <path
-                d="M117 167 Q149 153 182 163"
-                fill="none"
-                stroke="#FFF4C6"
-                stroke-width="1.5"
-              />
-
-            </svg>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ========================================
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+    <div class="nav">
+
+        <a href="#home" class="brand">
+
+            <!-- Refined Christ Love International emblem -->
+            <div class="logo">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Outer circle -->
+                    <circle cx="100" cy="100" r="96"
+                            fill="#071426"
+                            stroke="#d4af37"
+                            stroke-width="3"/>
+
+                    <!-- Globe -->
+                    <circle cx="100" cy="86" r="58"
+                            fill="#173c72"
+                            stroke="#d4af37"
+                            stroke-width="3"/>
+
+                    <!-- Globe latitude lines -->
+                    <ellipse cx="100" cy="86" rx="58" ry="23"
+                             fill="none"
+                             stroke="#6d91bd"
+                             stroke-width="1.2"
+                             opacity="0.55"/>
+
+                    <ellipse cx="100" cy="86" rx="38" ry="58"
+                             fill="none"
+                             stroke="#6d91bd"
+                             stroke-width="1.2"
+                             opacity="0.45"/>
+
+                    <!-- Simplified Africa -->
+                    <path d="
+                        M92 43
+                        L104 47
+                        L109 57
+                        L105 67
